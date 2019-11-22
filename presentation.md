@@ -45,7 +45,7 @@ kind --version   # Should yield at least 0.6.0
 docker ps        # Should not give any errors
 kubectl version  # Should at least give application version
 #
-docker pull kindest/node
+docker pull kindest/node:v1.16.3
 ```
 ---
 
