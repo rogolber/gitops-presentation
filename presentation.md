@@ -39,6 +39,7 @@ Install:
 - https://docs.docker.com/install/
 - https://kubernetes.io/docs/tasks/tools/install-kubectl/
 - https://github.com/kubernetes-sigs/kind
+- https://docs.fluxcd.io/en/latest/references/fluxctl.html
 
 ```
 kind --version   # Should yield at least 0.6.0
@@ -46,6 +47,8 @@ docker ps        # Should not give any errors
 kubectl version  # Should at least give application version
 #
 docker pull kindest/node:v1.16.3
+fluxctl identity --k8s-fwd-ns flux
+fluxctl sync --k8s-fwd-ns flux
 ```
 ---
 
@@ -56,23 +59,28 @@ docker pull kindest/node:v1.16.3
 kind create cluster
 # Just test that it runs OK
 kubectl get pods -A
+kubectl config get-contexts
+kubectl config use-context kind-kind  
 ```
 ---
 # ...  and enable GitOps with kustomize
 
 https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
+```
+mkdir fluxcd
+# ... follow instructions
+
+```
 
 ---
 ## GitOps
 
 - Often mentioned as part of a CD / CI toolchain
+
 ---
+## title
 
-## GitOps
-
-- Often mentioned as part of a CD / CI toolchain
 - bullet
-
 
 ???
 
@@ -91,14 +99,7 @@ https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
 ## Resources
 .left-column[
 ] .right-column[
-* Antlr: https://www.antlr.org/
-* GraalVM as a platform:
-https://www.graalvm.org/docs/graalvm-as-a-platform/
-* Truffle:
-https://www.graalvm.org/truffle/
-* Truffle javadoc:
-https://www.graalvm.org/truffle/javadoc/
-* https://github.com/jyukutyo/JVM-Math-Language
-* https://github.com/graalvm/simplelanguage
+* Fluxcd: https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
+* Kind https://kind.sigs.k8s.io/
 
 ]
