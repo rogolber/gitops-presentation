@@ -76,6 +76,16 @@ mkdir fluxcd
 ## GitOps
 
 - Often mentioned as part of a CD / CI toolchain
+- git repository is the source of truth for a system’s configuration,
+- configuration as code https://rollout.io/blog/configuration-as-code-everything-need-know/
+- when the actual state of the system drifts from the desired state.
+  - k8s good fit
+
+Argo-flux collaberation
+- https://github.com/argoproj/gitops-engine/
+- Effectively merging Flux and ArgoCD into a single solution is a long term goal: https://github.com/argoproj/gitops-engine/blob/master/specs/design.md
+  - https://github.com/fluxcd/flux/tree/gitops-engine-poc
+  - https://github.com/argoproj/argo-cd/tree/gitops-engine-poc
 
 ---
 ## title
