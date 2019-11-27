@@ -101,5 +101,5 @@ mkdir fluxcd
 ] .right-column[
 * Fluxcd: https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
 * Kind https://kind.sigs.k8s.io/
-
+* AWS wants to adopt flux: https://aws.amazon.com/blogs/containers/help-us-write-a-new-chapter-for-gitops-kubernetes-and-open-source-collaboration/
 ]
