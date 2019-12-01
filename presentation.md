@@ -47,6 +47,7 @@ docker ps        # Should not give any errors
 kubectl version  # Should at least give application version
 #
 docker pull kindest/node:v1.16.3
+docker pull nginx:1.17.6
 fluxctl identity --k8s-fwd-ns flux
 fluxctl sync --k8s-fwd-ns flux
 ```
@@ -75,11 +76,11 @@ mkdir fluxcd
 ---
 ## GitOps
 
-- Often mentioned as part of a CD / CI toolchain
 - git repository is the source of truth for a system’s configuration,
 - configuration as code https://rollout.io/blog/configuration-as-code-everything-need-know/
 - when the actual state of the system drifts from the desired state.
   - k8s good fit
+- Easily set up as part of a CD / CI toolchain
 
 Argo-flux collaberation
 - https://github.com/argoproj/gitops-engine/
@@ -88,9 +89,23 @@ Argo-flux collaberation
   - https://github.com/argoproj/argo-cd/tree/gitops-engine-poc
 
 ---
-## title
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Practical demo
+---
+layout: false
+## Example: Docker image
 
-- bullet
+```
+cd dockerimage
+docker build -t local-test:v1 .
+kind load docker-image local-test:v1
+cd ..
+kubectl apply -k k8s
+kc port-forward svc/nginx-test 8080
+```
 
 ???
 
@@ -103,7 +118,15 @@ Argo-flux collaberation
 ## Fluxcd
 - From weaveworks
 - A CNCF project
-- Often mentioned
+- Will be merged with ArgoCD
+
+---
+## title
+
+- bullet
+
+???
+
 
 ---
 ## Resources
