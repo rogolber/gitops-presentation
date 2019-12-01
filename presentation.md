@@ -45,11 +45,10 @@ Install:
 kind --version   # Should yield at least 0.6.0
 docker ps        # Should not give any errors
 kubectl version  # Should at least give application version
+fluxctl version  # Should at least give application version
 #
 docker pull kindest/node:v1.16.3
 docker pull nginx:1.17.6
-fluxctl identity --k8s-fwd-ns flux
-fluxctl sync --k8s-fwd-ns flux
 ```
 ---
 
@@ -66,11 +65,13 @@ kubectl config use-context kind-kind
 ---
 # ...  and enable GitOps with kustomize
 
-https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
-```
-mkdir fluxcd
-# ... follow instructions
+Follow flux tutorial
+- https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
 
+```
+kubectl 
+fluxctl identity --k8s-fwd-ns flux
+fluxctl sync --k8s-fwd-ns flux
 ```
 
 ---

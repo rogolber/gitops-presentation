@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: local-test-nginx
-        image: local-test:v2
+        image: local-test:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
