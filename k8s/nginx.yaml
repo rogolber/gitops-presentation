@@ -29,10 +29,10 @@ spec:
     spec:
       containers:
       - name: local-test-nginx
-        image: local-test:v3
+        image: local-test:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         resources:
           requests:
-            memory: "50Mi"
+            memory: "100Mi"

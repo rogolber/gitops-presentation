@@ -17,3 +17,5 @@ spec:
             - --git-user=nostra
             - --git-email=nostra@users.noreply.github.com
             - --git-url=git@github.com:nostra/gitops-presentation
+            - --git-poll-interval=30s
+            - --sync-garbage-collection
