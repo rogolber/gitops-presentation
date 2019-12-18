@@ -139,7 +139,7 @@ git commit k8s/nginx.yaml -m "Update"
 git push
 kc port-forward svc/nginx-test 8080
 ```
-
+* http://localhost:8080
 ---
 name: inverse
 layout: true
