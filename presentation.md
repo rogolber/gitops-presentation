@@ -109,8 +109,9 @@ Follow flux tutorial
 
 ```
 kubectl apply -k fluxcd
-fluxctl identity --k8s-fwd-ns flux
 kubectl logs -n flux -f flux
+kubectl get pods -A
+fluxctl identity --k8s-fwd-ns flux
 ```
 
 ---
@@ -122,15 +123,15 @@ Create an example docker image...
 cd dockerimage
 docker build -t local-test:v1 .
 kind load docker-image local-test:v1
-cd ..
 fluxctl --k8s-fwd-ns=flux sync
 kc port-forward svc/nginx-test 8080
 ```
-
+* http://localhost:8080
 ---
 ## Update the example deployment
 
 ```
+vi Dockerfile
 docker build -t local-test:v2 .
 kind load docker-image local-test:v2
 vi k8s/nginx.yaml  # Update the image reference
