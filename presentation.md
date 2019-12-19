@@ -101,7 +101,7 @@ kubectl config get-contexts
 kubectl config use-context kind-kind  
 ```
 ---
-# ...  and enable GitOps with kustomize
+## ...  and enable GitOps with kustomize
 
 Follow flux tutorial
 - https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
@@ -134,7 +134,7 @@ kc port-forward svc/nginx-test 8080
 vi Dockerfile
 docker build -t local-test:v2 .
 kind load docker-image local-test:v2
-vi k8s/nginx.yaml  # Update the image reference
+vi k8s/nginx.yaml       # Update the image reference
 git commit k8s/nginx.yaml -m "Update"
 git push
 kc port-forward svc/nginx-test 8080
