@@ -43,8 +43,7 @@ Install:
 - https://docs.docker.com/install/
 - https://kubernetes.io/docs/tasks/tools/install-kubectl/
 - https://github.com/kubernetes-sigs/kind
-- https://docs.fluxcd.io/en/latest/references/fluxctl.html
-
+- https://docs.fluxcd.io/en/latest/references/fluxctl/
 ```
 kind --version   # Should yield at least 0.6.0
 docker ps        # Should not give any errors
@@ -104,7 +103,7 @@ kubectl config use-context kind-kind
 ## ...  and enable GitOps with kustomize
 
 Follow flux tutorial
-- https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize.html
+- https://docs.fluxcd.io/en/latest/tutorials/get-started-kustomize/
 - https://github.com/nostra/gitops-presentation
 
 ```
