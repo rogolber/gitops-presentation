@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flux
+  namespace: flux
 spec:
   template:
     spec:
@@ -14,8 +15,8 @@ spec:
             - --ssh-keygen-dir=/var/fluxd/keygen
             - --git-branch=master
             - --git-path=k8s
-            - --git-user=nostra
-            - --git-email=nostra@users.noreply.github.com
-            - --git-url=git@github.com:nostra/gitops-presentation
+            - --git-user=rogolber
+            - --git-email=rogolber@users.noreply.github.com
+            - --git-url=git@github.com:rogolber/gitops-presentation
             - --git-poll-interval=30s
             - --sync-garbage-collection
